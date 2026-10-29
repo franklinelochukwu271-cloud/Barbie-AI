@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>BABE AI | Your Personal Intelligence</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 22px;
+      border-bottom: 1px solid #72521b;
+      color: #ffd76b;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 30px 18px;
+      text-align: center;
+    }
+
+    .orb {
+      width: 180px;
+      height: 180px;
+      margin: 35px auto;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 35% 30%,
+        #fff7c7,
+        #ffc344 12%,
+        #b66b08 35%,
+        #382000 62%,
+        #080604 75%
+      );
+      box-shadow:
+        0 0 25px #e9a51d,
+        0 0 65px #b879184f,
+        inset 0 0 25px #ffedaa;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 20px #e9a51d;
+      }
+      to {
+        box-shadow:
+          0 0 40px #ffc344,
+          0 0 80px #b8791870;
+      }
+    }
+
+    h2 {
+      color: #ffd76b;
+    }
+
+    .description {
+      color: #c4c4c4;
+      line-height: 1.8;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: 1px solid #b8892d;
+      border-radius: 25px;
+      background: #11100d;
+      color: #ffdc81;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #49340f;
+    }
+
+    .composer {
+      display: flex;
+      gap: 10px;
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 8px;
+      border: 1px solid #72521b;
+      border-radius: 18px;
+      background: #111111;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+    }
+
+    #reply {
+      color: #ffdc81;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 20px;
+      color: #a9a9a9;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>♛ BABE AI</h1>
+    <p>YOUR PERSONAL INTELLIGENCE</p>
+  </header>
+
+  <main>
+    <p>Hello, I'm</p>
+    <h2>BABE AI</h2>
+    <p class="description">
+      Your Personal Intelligence<br>
+      I'm here to help, create, answer and inspire.<br>
+      What would you like to do today?
+    </p>
+
+    <div class="orb"></div>
+
+    <div class="actions">
+      <button onclick="choosePrompt('Ask me anything')">
+        Ask a question
+      </button>
+      <button onclick="choosePrompt('Help me write something')">
+        Write something
+      </button>
+      <button onclick="choosePrompt('Give me creative ideas')">
+        Get ideas
+      </button>
+    </div>
+
+    <form class="composer" id="chatForm">
+      <input id="message"
+        placeholder="Type your message here..."
+        autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+
+    <p id="reply"></p>
+  </main>
+
+  <footer>
+    ♛ BABE AI · Talk · Ask · Create · Explore
+  </footer>
+
+  <script>
+    function choosePrompt(text) {
+      document.getElementById("message").value = text;
+      document.getElementById("message").focus();
+    }
+
+    document.getElementById("chatForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const input = document.getElementById("message");
+        const reply = document.getElementById("reply");
+
+        if (input.value.trim() === "") return;
+
+        reply.textContent =
+          "You: " + input.value +
+          " — BABE AI's AI connection can be added next.";
+
+        input.value = "";
+      });
+  </script>
+
+</body>
+</html>
