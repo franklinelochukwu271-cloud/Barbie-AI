@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050505">
-  <title>BABE AI | Your Personal Intelligence</title>
+  <title>BBRBIE AI | Your Personal Intelligence</title>
   <style>
     * {
       box-sizing: border-box;
@@ -141,13 +141,13 @@
 <body>
 
   <header>
-    <h1>♛ BABE AI</h1>
+    <h1>♛ BARBIE AI</h1>
     <p>YOUR PERSONAL INTELLIGENCE</p>
   </header>
 
   <main>
     <p>Hello, I'm</p>
-    <h2>BABE AI</h2>
+    <h2>BARBIE AI</h2>
     <p class="description">
       Your Personal Intelligence<br>
       I'm here to help, create, answer and inspire.<br>
@@ -179,7 +179,7 @@
   </main>
 
   <footer>
-    ♛ BABE AI · Talk · Ask · Create · Explore
+    ♛ BARBIE AI · Talk · Ask · Create · Explore
   </footer>
 
   <script>
@@ -199,7 +199,7 @@
 
         reply.textContent =
           "You: " + input.value +
-          " — BABE AI's AI connection can be added next.";
+          " — BARBIE AI's AI connection can be added next.";
 
         input.value = "";
       });
