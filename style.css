@@ -1,129 +1,139 @@
+/* ===== BABE AI BLACK & GOLD DESIGN ===== */
+
 * {
-      box-sizing: border-box;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #050505;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
+body {
+  min-height: 100vh;
+  background: #080808;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
 
-    header {
-      padding: 22px;
-      border-bottom: 1px solid #72521b;
-      color: #ffd76b;
-      text-align: center;
-    }
+header {
+  padding: 24px 18px;
+  text-align: center;
+  border-bottom: 1px solid #30240c;
+}
 
-    header h1 {
-      margin: 0;
-      letter-spacing: 4px;
-    }
+header h1 {
+  color: #e7bd62;
+  letter-spacing: 4px;
+  font-size: 28px;
+}
 
-    header p {
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+header p {
+  color: #aaa;
+  margin-top: 8px;
+  font-size: 14px;
+}
 
-    main {
-      max-width: 950px;
-      margin: auto;
-      padding: 30px 18px;
-      text-align: center;
-    }
+main {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 18px;
+  text-align: center;
+}
 
-    .orb {
-      width: 180px;
-      height: 180px;
-      margin: 35px auto;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle at 35% 30%,
-        #fff7c7,
-        #ffc344 12%,
-        #b66b08 35%,
-        #382000 62%,
-        #080604 75%
-      );
-      box-shadow:
-        0 0 25px #e9a51d,
-        0 0 65px #b879184f,
-        inset 0 0 25px #ffedaa;
-      animation: glow 3s infinite alternate;
-    }
+.orb {
+  width: 180px;
+  height: 180px;
+  margin: 25px auto;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #fff4c2,
+    #d9a63e 25%,
+    #805416 55%,
+    #171006 75%
+  );
+  box-shadow:
+    0 0 25px #c8952d,
+    0 0 65px #805416,
+    inset 0 0 25px #ffe9a3;
+  animation: orb-pulse 3s ease-in-out infinite;
+}
 
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 20px #e9a51d;
-      }
-      to {
-        box-shadow:
-          0 0 40px #ffc344,
-          0 0 80px #b8791870;
-      }
-    }
+@keyframes orb-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px #c8952d, 0 0 55px #805416;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #f0c45e, 0 0 85px #805416;
+  }
+}
 
-    h2 {
-      color: #ffd76b;
-    }
+button {
+  background: linear-gradient(135deg, #f4d17b, #b78322);
+  color: #100d06;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 22px;
+  margin: 8px 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .description {
-      color: #c4c4c4;
-      line-height: 1.8;
-    }
+button:hover {
+  filter: brightness(1.15);
+}
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 25px 0;
-    }
+.composer {
+  display: flex;
+  gap: 8px;
+  margin: 25px auto;
+  max-width: 600px;
+}
 
-    button {
-      padding: 12px 18px;
-      border: 1px solid #b8892d;
-      border-radius: 25px;
-      background: #11100d;
-      color: #ffdc81;
-      cursor: pointer;
-    }
+.composer input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #6d5426;
+  border-radius: 25px;
+  background: #151515;
+  color: white;
+  outline: none;
+}
 
-    button:hover {
-      background: #49340f;
-    }
+.composer input:focus {
+  border-color: #e7bd62;
+}
 
-    .composer {
-      display: flex;
-      gap: 10px;
-      max-width: 600px;
-      margin: 35px auto;
-      padding: 8px;
-      border: 1px solid #72521b;
-      border-radius: 18px;
-      background: #111111;
-    }
+#status {
+  color: #d9b86b;
+  margin: 15px 0;
+}
 
-    input {
-      flex: 1;
-      min-width: 0;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: white;
-    }
+#reply {
+  color: #ddd;
+  line-height: 1.6;
+  margin: 15px auto;
+  max-width: 600px;
+  overflow-wrap: anywhere;
+}
 
-    #reply {
-      color: #ffdc81;
-      overflow-wrap: anywhere;
-    }
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 23px;
+  }
 
-    footer {
-      padding: 20px;
-      color: #a9a9a9;
-      text-align: center;
-      font-size: 12px;
-    }
+  .orb {
+    width: 145px;
+    height: 145px;
+  }
+
+  .composer {
+    flex-wrap: wrap;
+  }
+
+  .composer input {
+    flex-basis: 100%;
+  }
+}
