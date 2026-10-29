@@ -1,0 +1,129 @@
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 22px;
+      border-bottom: 1px solid #72521b;
+      color: #ffd76b;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 30px 18px;
+      text-align: center;
+    }
+
+    .orb {
+      width: 180px;
+      height: 180px;
+      margin: 35px auto;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 35% 30%,
+        #fff7c7,
+        #ffc344 12%,
+        #b66b08 35%,
+        #382000 62%,
+        #080604 75%
+      );
+      box-shadow:
+        0 0 25px #e9a51d,
+        0 0 65px #b879184f,
+        inset 0 0 25px #ffedaa;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 20px #e9a51d;
+      }
+      to {
+        box-shadow:
+          0 0 40px #ffc344,
+          0 0 80px #b8791870;
+      }
+    }
+
+    h2 {
+      color: #ffd76b;
+    }
+
+    .description {
+      color: #c4c4c4;
+      line-height: 1.8;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: 1px solid #b8892d;
+      border-radius: 25px;
+      background: #11100d;
+      color: #ffdc81;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #49340f;
+    }
+
+    .composer {
+      display: flex;
+      gap: 10px;
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 8px;
+      border: 1px solid #72521b;
+      border-radius: 18px;
+      background: #111111;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+    }
+
+    #reply {
+      color: #ffdc81;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 20px;
+      color: #a9a9a9;
+      text-align: center;
+      font-size: 12px;
+    }
