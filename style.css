@@ -137,3 +137,16 @@ button:hover {
     flex-basis: 100%;
   }
 }
+/* BARBIE AI STYLE TEST */
+.description {
+  color: #e7bd62;
+  line-height: 1.8;
+}
+
+footer {
+  color: #e7bd62;
+  text-align: center;
+  padding: 25px 10px;
+  border-top: 1px solid #30240c;
+}
+
